@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пример вёрстки книги-раскраски для Amazon KDP</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --ink:#1f2a44; --muted:#5b6475; --bg:#fbf6ea; --card:#fff; --line:#e6dcc4; --accent:#e0a52f; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 Georgia, "Times New Roman", serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:0 16px; }
+  header { background:var(--ink); color:#fff; padding:44px 0 36px; }
+  header h1 { font-size:clamp(26px,4.5vw,42px); line-height:1.2; margin:0 0 10px; }
+  header p { margin:0; color:#d9deea; max-width:760px; }
+  .tag { display:inline-block; background:var(--accent); color:var(--ink); border-radius:999px; padding:2px 12px; font-size:14px; margin-bottom:14px; }
+  section { padding:34px 0 8px; }
+  h2 { font-size:clamp(21px,3vw,28px); margin:0 0 6px; }
+  .lead { color:var(--muted); margin:0 0 18px; }
+  figure { margin:0 0 14px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; }
+  figure img { width:100%; height:auto; display:block; border-radius:6px; }
+  figcaption { color:var(--muted); font-size:15px; margin-top:8px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .specs { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 22px; }
+  .specs li { margin:4px 0; }
+  .dl { display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 10px; }
+  .dl a { background:var(--ink); color:#fff; text-decoration:none; padding:10px 16px; border-radius:10px; font-size:15px; }
+  .dl a.light { background:#fff; color:var(--ink); border:1px solid var(--ink); }
+  footer { color:var(--muted); font-size:14px; padding:28px 0 40px; }
+  @media (max-width:700px) { .two { grid-template-columns:1fr; } body { font-size:16px; } }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="tag">пример вёрстки · Amazon KDP</span>
+  <h1>Книга-раскраска по сказке: обложка и развороты</h1>
+  <p>Пробный фрагмент под ваше ТЗ: формат 8,5×11 дюймов, внизу разворота — текст сказки, слева вверху — одинаковый вензель, справа вверху — чёрно-белый рисунок для раскрашивания. Сказка, рисунки и имена — условные, сделаны для примера.</p>
+</div></header>
+
+<main class="wrap">
+  <section>
+    <h2>Скачать PDF</h2>
+    <p class="lead">Файлы собраны по требованиям KDP: точный размер, все шрифты встроены, блок строго чёрно-белый.</p>
+    <div class="dl">
+      <a href="interior.pdf" download>Блок книги (6 стр.) — PDF</a>
+      <a href="cover.pdf" download>Обложка — PDF</a>
+      <a class="light" href="cover_guides.pdf" download>Обложка с разметкой</a>
+      <a class="light" href="house_vector.svg" download>Векторный рисунок — SVG</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Развороты внутреннего блока</h2>
+    <p class="lead">Сетка одна на всю книгу: рисунок и вензель — в верхней половине, текст — в нижней, номер страницы — по центру внизу.</p>
+    <figure><img src="spread1.jpg" alt="Разворот 2–3: слева вензель и текст, справа рисунок домика и текст" loading="lazy"><figcaption>Страницы 2–3: вензель слева, рисунок для раскрашивания справа.</figcaption></figure>
+    <figure><img src="spread2.jpg" alt="Разворот 4–5 с загадкой в рамке и ночным рисунком" loading="lazy"><figcaption>Страницы 4–5: так впишется загадка в свободное место под текстом (отгадка — перевёрнутым мелким шрифтом).</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Скан тушью → чистый вектор</h2>
+    <p class="lead">Слева — имитация скана: серая бумага, пыль, волоски, пятно, лёгкий перекос. Справа — после выравнивания, чистки и трассировки: ровный замкнутый контур, ничего лишнего. Обычная трассировка, без ИИ — линия художника сохраняется.</p>
+    <div class="two">
+      <figure><img src="scan.jpg" alt="Фрагмент скана с пылью и пятном" loading="lazy"><figcaption>До: скан.</figcaption></figure>
+      <figure><img src="vector.jpg" alt="Тот же фрагмент после векторизации" loading="lazy"><figcaption>После: вектор (можно увеличивать без потери качества).</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Обложка-разворот с корешком</h2>
+    <p class="lead">Задняя сторона, корешок и лицевая сторона одним файлом, с вылетами под обрез.</p>
+    <figure><img src="cover.jpg" alt="Обложка: задняя сторона, корешок, лицевая сторона" loading="lazy"><figcaption>Готовая обложка.</figcaption></figure>
+    <figure><img src="cover_guides.jpg" alt="Та же обложка с линиями обреза, безопасной зоны и корешка" loading="lazy"><figcaption>С разметкой: красная — линия обреза, синяя пунктирная — безопасная зона для текста, зелёные — корешок, белый прямоугольник — место под штрихкод Amazon.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Технические параметры примера</h2>
+    <ul class="specs">
+      <li>Блок: 8,5×11 дюймов (215,9×279,4 мм), без вылетов — рисункам вылеты не нужны.</li>
+      <li>Поля: внутреннее (у корешка) 0,75″ — больше минимальных 0,5″ для книг 121–150 страниц; внешнее 0,5″, верх 0,5″.</li>
+      <li>Цвет блока: только чёрный, без цветных элементов.</li>
+      <li>Обложка на 124 страницы, белая бумага: корешок 0,279″ (124 × 0,002252″), полный размер 17,529×11,25″ с вылетами 0,125″.</li>
+      <li>Текст на корешке — разрешён KDP при объёме больше 79 страниц; отступы от сгибов соблюдены.</li>
+      <li>Цветная иллюстрация на обложке — 300 точек на дюйм; рисунки внутри — вектор.</li>
+      <li>Все шрифты встроены в PDF.</li>
+    </ul>
+  </section>
+</main>
+
+<footer><div class="wrap">Пример подготовлен для отклика на Kwork. Сказка, рисунки и имена автора и художника — условные.</div></footer>
+</body>
+</html>
